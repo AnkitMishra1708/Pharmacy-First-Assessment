@@ -3,13 +3,13 @@ import { getProtocolByIdService } from "../services/protocol.service.js";
 
 export const getProtocolById = asyncHandler(async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { protocolId } = req.body;
 
-    if (!id || id.trim() === "") {
+    if (!protocolId || protocolId.trim() === "") {
       return next(new ApiError(400, "Protocol ID is required."));
     }
 
-    const protocolDetails = await getProtocolByIdService(id);
+    const protocolDetails = await getProtocolByIdService(protocolId);
 
     return res.json(
       new ApiResponse(
@@ -19,6 +19,7 @@ export const getProtocolById = asyncHandler(async (req, res, next) => {
       )
     );
   } catch (error) {
+    console.log(error);
     return next(new ApiError(500, "Internal error!!!", [error.message]));
   }
 });

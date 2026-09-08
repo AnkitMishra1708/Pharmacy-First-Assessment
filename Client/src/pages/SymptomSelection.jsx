@@ -67,6 +67,7 @@ export const SymptomSelection = () => {
 
         try {
             const res = await intakeApi(payload);
+            console.log(res.data.data);
             setResult(res.data.data);
         } catch (err) {
             console.error("Failed to submit intake:", err);
@@ -127,7 +128,7 @@ export const SymptomSelection = () => {
                         {suggestsDoctor
                             ? "Please quickly see a doctor"
                             : suggestsPharmacist
-                                ? "Speak to a pharmacist"
+                                ? "Your prescription send to pharmacist"
                                 : "Recommendation"}
                     </h2>
 
@@ -142,14 +143,6 @@ export const SymptomSelection = () => {
                                 className="w-full rounded-md bg-black py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 active:opacity-70"
                             >
                                 Find a doctor
-                            </button>
-                        )}
-                        {suggestsPharmacist && (
-                            <button
-                                onClick={() => navigate("/pharmacists")}
-                                className="w-full rounded-md bg-black py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85 active:opacity-70"
-                            >
-                                Find a pharmacist
                             </button>
                         )}
                         <button

@@ -3,7 +3,6 @@ import { getProtocolById } from "../controllers/protocol.controller.js";
 
 const protocol = express.Router();
 
-protocol.route("/triageApproved/:id").get(getProtocolById);
+protocol.route("/triageApproved").post(getProtocolById);
 
 export { protocol };
-    

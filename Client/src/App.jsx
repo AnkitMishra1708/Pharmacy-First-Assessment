@@ -7,6 +7,9 @@ import { Dashboard } from "./pages/Dashboard.jsx";
 import { Prescription } from "./pages/Prescription.jsx";
 import { Patient } from "./pages/Patient.jsx";
 import { SymptomSelection } from "./pages/SymptomSelection.jsx";
+import { TriageDetail } from "./pages/TriageDetail.jsx";
+import { PatientTriageDetail } from "./pages/PatientTriageDetail.jsx";
+import { PharmacistDashboard } from "./pages/PharmacistDashboard.jsx";
 
 function ProtectedLayout() {
   const { user, loading, logout } = useAuth();
@@ -24,7 +27,10 @@ export function App() {
           <Route path="/register" element={<Register />} />
           <Route element={<ProtectedLayout />}>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard/:id" element={<PatientTriageDetail />} />
             <Route path="/patient" element={<Patient />} />
+            <Route path="/patient/:id" element={<TriageDetail />} />
+            <Route path="/pharmacistDashboard" element={<PharmacistDashboard />} />
             <Route path="/prescription" element={<Prescription />} />
             <Route path="/prescription/:protocolId" element={<SymptomSelection />} />
           </Route>

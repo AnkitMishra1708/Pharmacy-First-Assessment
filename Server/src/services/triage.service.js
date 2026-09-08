@@ -109,3 +109,28 @@ export const logTriageOutcomeService = async (triageId, outcomeData) => {
     throw new ApiError(500, "Something went wrong.", [error.message]);
   }
 };
+
+export const getAllGreenTriageSessionsService = async () => {
+  try {
+    const sessions = await Triage.find({ classification: "GREEN" }).sort({
+      createdAt: -1,
+    });
+    return sessions;
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    throw new ApiError(500, "Something went wrong.", [error.message]);
+  }
+};
+
+export const getTriageByPatientIdService = async (patientId) => {
+  try {
+    const sessions = await Triage.find({ patient_id: patientId }).sort({
+      createdAt: -1,
+    });
+
+    return sessions;
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    throw new ApiError(500, "Something went wrong.", [error.message]);
+  }
+};

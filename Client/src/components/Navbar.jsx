@@ -8,7 +8,7 @@ const NAV_ITEMS = {
         { label: "Prescriptions", to: "/prescription" },
     ],
     pharmacist: [
-        { label: "Dashboard", to: "/" },
+        { label: "Dashboard", to: "/pharmacistDashboard" },
         { label: "Patient", to: "/patient" },
     ],
 };

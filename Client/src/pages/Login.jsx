@@ -21,7 +21,7 @@ export const Login = () => {
 
         try {
             const user = await login(form.email, form.password);
-            navigate(user.role === "pharmacist" ? "/" : "/");
+            navigate(user.role === "pharmacist" ? "/pharmacistDashboard" : "/");
         } catch (err) {
             setError(
                 err.response?.data?.message || "Something went wrong. Please try again."
