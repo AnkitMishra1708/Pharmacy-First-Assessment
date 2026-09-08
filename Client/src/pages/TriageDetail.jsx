@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { fetchProtocolsApi, getAllTriageApi, logTriageOutcomeApi } from "../api/triage";
 import { formatStatus, formatProtocolName, formatDateTime } from "../utils/triage";
-import { useAuth } from "../Context/Authcontext";
+import { useAuth } from "../Context/AuthContext";
 
 const OUTCOME_OPTIONS = [
     { value: "RESOLVED", label: "Resolved", icon: CheckCircle2 },

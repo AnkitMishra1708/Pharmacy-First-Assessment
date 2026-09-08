@@ -12,7 +12,7 @@ import {
     Stethoscope,
 } from "lucide-react";
 import { fetchProtocolsApi, getTriageByPatientIdApi } from "../api/triage";
-import { useAuth } from "../Context/Authcontext";
+import { useAuth } from "../Context/AuthContext";
 import { formatStatus, formatProtocolName, formatDateTime } from "../utils/triage";
 
 export const PatientTriageDetail = () => {

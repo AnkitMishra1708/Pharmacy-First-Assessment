@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, Loader2 } from "lucide-react";
 import { getTriageByPatientIdApi } from "../api/triage";
-import { useAuth } from "../Context/Authcontext";
+import { useAuth } from "../Context/AuthContext";
 import { formatStatus, formatProtocolName, formatDateTime } from "../utils/triage";
 
 export const Dashboard = () => {

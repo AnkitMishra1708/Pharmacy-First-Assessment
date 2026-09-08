@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, Loader2, Thermometer, Clock, Info, Stethoscope, Pill, CheckCircle2 } from "lucide-react";
 import { allConditionApi, intakeApi } from "../api/triage";
-import { useAuth } from "../Context/Authcontext";
+import { useAuth } from "../Context/AuthContext";
 
 export const SymptomSelection = () => {
     const { protocolId } = useParams();
